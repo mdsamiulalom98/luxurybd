@@ -41,7 +41,7 @@
                         <div class="border__bottom"></div>
                     </div>
                     <div class="category-slider">
-                        @foreach ($categories as $key => $value)
+                        @foreach ($homecategory as $key => $value)
                             <div class="cat-item">
                                 <div class="cat-img">
                                     <a href="{{ route('category', $value->slug) }}">

@@ -2,7 +2,7 @@
 @section('title', 'Customer Categories')
 @section('content')
     <section class="customer-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 d-none d-sm-block">
                     <div class="customer-sidebar">

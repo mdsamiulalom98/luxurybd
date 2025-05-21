@@ -2,7 +2,7 @@
 @section('title','Customer Account')
 @section('content')
 <section class="customer-section">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 d-none d-sm-block">
                 <div class="customer-sidebar">
@@ -11,6 +11,14 @@
             </div>
             <div class="col-sm-9">
                 <div class="customer-content">
+                    <div class="reffer-link-wrapper">
+                        <div class="reffer-link-text" id="copyText">
+                            {{ route('home', ['r' => Auth::guard('customer')->user()->reseller_id]) }}
+                        </div>
+                        <span onclick="copyToClipboard()" id="linkCopy">
+                            <i class="fa fa-copy"></i>
+                        </span>
+                    </div>
                     <h5 class="account-title">My Account</h5>
                     <table class="table">
                         @php
@@ -56,4 +64,17 @@
 @push('script')
 <script src="{{asset('public/frontEnd/')}}/js/parsley.min.js"></script>
 <script src="{{asset('public/frontEnd/')}}/js/form-validation.init.js"></script>
+<script  >
+    function copyToClipboard() {
+        const text = document.getElementById('copyText').innerText;
+    
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                toastr.success('Text copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+    }
+</script>
 @endpush

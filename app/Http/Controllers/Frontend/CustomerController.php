@@ -126,7 +126,7 @@ class CustomerController extends Controller
                 if (Cart::instance('shopping')->count() > 0) {
                     return redirect()->route('customer.checkout');
                 }
-                return redirect()->intended('customer/account');
+                return redirect()->intended('customer/products');
             }
             Toastr::error('Opps! your phone or password wrong');
             return redirect()->back();

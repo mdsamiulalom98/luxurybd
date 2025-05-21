@@ -35,6 +35,7 @@ class FrontendController extends Controller
 {
     public function index(Request $request)
     {
+        $allowedCategories = [];
         $sliders = Banner::where(['status' => 1, 'category_id' => 1])
             ->select('id', 'image', 'link')
             ->get();
@@ -64,11 +65,24 @@ class FrontendController extends Controller
 
         $hotdeal_top = $hotdeal_top->limit(8)->get();
 
-        $homecategory = Category::where(['front_view' => 1, 'status' => 1])
-            ->whereIn('id', $allowedCategories)
-            ->select('id', 'name', 'slug', 'front_view', 'status')
-            ->orderBy('id', 'ASC')
-            ->get();
+        $homecategoryQuery = Category::where(['front_view' => 1, 'status' => 1])
+            ->select('id', 'name', 'slug', 'front_view', 'status', 'image')
+            ->orderBy('id', 'ASC');
+
+        if (Auth::guard('customer')->check()) {
+            $customer = Auth::guard('customer')->user();
+            $allowedCategories = array_filter([
+                $customer->category1,
+                $customer->category2,
+                $customer->category3,
+            ]);
+
+            if (!empty($allowedCategories)) {
+                $homecategoryQuery->whereIn('id', $allowedCategories);
+            }
+        }
+
+        $homecategory = $homecategoryQuery->get();
 
         $brands = Brand::where(['status' => 1])
             ->orderBy('id', 'ASC')

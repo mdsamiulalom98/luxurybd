@@ -30,7 +30,7 @@
                                 <label for="referral_id">Referral ID *</label>
                                 <input type="text" id="referral_id"
                                     class="form-control @error('referral_id') is-invalid @enderror" name="referral_id"
-                                    value="{{ Session::get('referral_id') ?? old('referral_id') }}" placeholder="Referral ID" readonly required>
+                                    value="{{ Session::get('referral_id') ?? old('referral_id') }}" placeholder="Referral ID" required>
                                 @error('referral_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

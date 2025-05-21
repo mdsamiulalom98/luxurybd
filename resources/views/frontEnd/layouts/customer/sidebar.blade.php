@@ -46,7 +46,7 @@
                     data-feather="bar-chart-2"></i>Withdraw</a>
         </li>
         <li>
-            <a href="{{ route('customer.members') }}"
+            <a href="{{ route('customer.members', ['level' => 1]) }}"
                 class="{{ request()->is('customer/members') ? 'active' : '' }}"><i
                     data-feather="users"></i>Members</a>
         </li>

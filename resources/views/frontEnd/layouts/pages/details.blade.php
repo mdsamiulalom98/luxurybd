@@ -45,7 +45,7 @@
         }
     @endphp
     <div class="homeproduct main-details-page">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="details-product">
@@ -254,7 +254,7 @@
     </div>
 
     <section class="pro_details_area">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="details-tab">
@@ -456,7 +456,7 @@
     </section>
 
     <section class="related-product-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="related-title">
                     <h5>Related Product</h5>

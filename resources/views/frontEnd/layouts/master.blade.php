@@ -21,8 +21,8 @@
     <!-- toastr css -->
     <link rel="stylesheet" href="{{ asset('public/backEnd/') }}/assets/css/toastr.min.css" />
     <link rel="stylesheet" href="{{ asset('public/frontEnd/css/wsit-menu.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/style.css?v=2.0.0') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/responsive.css?v=2.0.0') }}" />
+    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/style.css?v=2.0.1') }}" />
+    <link rel="stylesheet" href="{{ asset('public/frontEnd/css/responsive.css?v=2.0.1') }}" />
 
     <script src="{{ asset('public/frontEnd/js/jquery-3.7.1.min.js') }}"></script>
     @foreach ($pixels as $pixel)
